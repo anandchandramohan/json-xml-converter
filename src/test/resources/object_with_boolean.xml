@@ -1,0 +1,8 @@
+<object>
+    <boolean name="isHuman">
+        true
+    </boolean>
+    <boolean name="isTall">
+        false
+    </boolean>
+</object>
