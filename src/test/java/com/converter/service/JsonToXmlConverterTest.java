@@ -1,4 +1,4 @@
-package com.converter.service.impl;
+package com.converter.service;
 
 import com.converter.factory.ConverterFactory;
 import com.converter.service.XMLJSONConverter;
@@ -35,7 +35,7 @@ public class JsonToXmlConverterTest {
     }
 
     @Test
-    public void testNumberOnyConvertJSONtoXML() throws IOException, XMLStreamException, SAXException {
+    public void testNumberOnlyConvertJSONtoXML() throws IOException, XMLStreamException, SAXException {
         Path jsonInput = Paths.get(TEST_RESOURCES_BASE_PATH,"number_only.json");
         Path jsonInputActualPath = Paths.get(TEST_RESOURCES_BASE_PATH,ACTUAL_FOLDER, "number_only.xml");
         Path expectedXmlPath = Paths.get(TEST_RESOURCES_BASE_PATH, "number_only.xml");
@@ -59,7 +59,7 @@ public class JsonToXmlConverterTest {
     }
 
     @Test
-    public void testStringOnyConvertJSONtoXML() throws IOException, XMLStreamException, SAXException {
+    public void testStringOnlyConvertJSONtoXML() throws IOException, XMLStreamException, SAXException {
         Path jsonInput = Paths.get(TEST_RESOURCES_BASE_PATH,"string_only.json");
         Path jsonInputActualPath = Paths.get(TEST_RESOURCES_BASE_PATH,ACTUAL_FOLDER, "string_only.xml");
         Path expectedXmlPath = Paths.get(TEST_RESOURCES_BASE_PATH, "string_only.xml");
@@ -83,7 +83,7 @@ public class JsonToXmlConverterTest {
     }
 
     @Test
-    public void testBooleanOnyConvertJSONtoXML() throws IOException, XMLStreamException, SAXException {
+    public void testBooleanOnlyConvertJSONtoXML() throws IOException, XMLStreamException, SAXException {
         Path jsonInput = Paths.get(TEST_RESOURCES_BASE_PATH,"boolean_only.json");
         Path jsonInputActualPath = Paths.get(TEST_RESOURCES_BASE_PATH,ACTUAL_FOLDER, "boolean_only.xml");
         Path expectedXmlPath = Paths.get(TEST_RESOURCES_BASE_PATH, "boolean_only.xml");
@@ -107,7 +107,7 @@ public class JsonToXmlConverterTest {
     }
 
     @Test
-    public void testNullOnyConvertJSONtoXML() throws IOException, XMLStreamException, SAXException {
+    public void testNullOnlyConvertJSONtoXML() throws IOException, XMLStreamException, SAXException {
         Path jsonInput = Paths.get(TEST_RESOURCES_BASE_PATH,"null_only.json");
         Path jsonInputActualPath = Paths.get(TEST_RESOURCES_BASE_PATH,ACTUAL_FOLDER, "null_only.xml");
         Path expectedXmlPath = Paths.get(TEST_RESOURCES_BASE_PATH, "null_only.xml");

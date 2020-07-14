@@ -1,4 +1,4 @@
-package com.converter.utils;
+package com.converter.constant;
 
 import com.converter.exception.InvalidParameterException;
 import org.apache.commons.io.FilenameUtils;
@@ -12,7 +12,7 @@ import java.nio.file.*;
  * @author Anand Chandramohan.
  *
  */
-public class FileUtils {
+public class ApplicationUtils {
 
     /**
      *
@@ -28,19 +28,19 @@ public class FileUtils {
      */
     public static void validateInputFilePathAndContent(Path path) throws IOException, InvalidParameterException {
         if(Files.notExists(path)) {
-            throw new InvalidParameterException(ErrorMessageUtils.FILE_NOT_EXISTS);
+            throw new InvalidParameterException(ErrorMessages.FILE_NOT_EXISTS);
         }
         if(!Files.isRegularFile(path)) {
-            throw new InvalidParameterException(ErrorMessageUtils.IS_NOT_A_REGULAR_FILE);
+            throw new InvalidParameterException(ErrorMessages.IS_NOT_A_REGULAR_FILE);
         }
         if(!Files.isReadable(path)) {
-            throw new InvalidParameterException(ErrorMessageUtils.FILE_HAS_NO_READ_PERMISSION);
+            throw new InvalidParameterException(ErrorMessages.FILE_HAS_NO_READ_PERMISSION);
         }
         if(Files.size(path) <= 0) {
-            throw new InvalidParameterException(ErrorMessageUtils.FILE_IS_EMPTY);
+            throw new InvalidParameterException(ErrorMessages.FILE_IS_EMPTY);
         }
         if(!FilenameUtils.isExtension(path.toString(), "json")){
-            throw new InvalidParameterException(ErrorMessageUtils.NOT_A_VALID_JSON_FILE);
+            throw new InvalidParameterException(ErrorMessages.NOT_A_VALID_JSON_FILE);
         }
     }
 
@@ -56,7 +56,7 @@ public class FileUtils {
         String filePath = FilenameUtils.getName(path.toString());
         if(!"".equals(FilenameUtils.getExtension(filePath))) {
             if(!FilenameUtils.isExtension(filePath, "xml")) {
-                throw new InvalidParameterException(ErrorMessageUtils.NOT_A_VALID_XML_FILE);
+                throw new InvalidParameterException(ErrorMessages.NOT_A_VALID_XML_FILE);
             }
             String name = FilenameUtils.getName(filePath);
             int nameCount = path.getNameCount();

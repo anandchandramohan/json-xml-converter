@@ -3,7 +3,7 @@ package com.converter;
 import com.converter.exception.InvalidParameterException;
 import com.converter.factory.ConverterFactory;
 import com.converter.service.XMLJSONConverter;
-import com.converter.utils.FileUtils;
+import com.converter.constant.ApplicationUtils;
 
 import javax.xml.stream.XMLStreamException;
 import java.io.IOException;
@@ -37,9 +37,9 @@ public class Application {
         Path inputJsonPath = Paths.get(jsonPath);
         Path outputXmlPath = Paths.get(xmlPath);
         try {
-            FileUtils.validateInputFilePathAndContent(inputJsonPath);
+            ApplicationUtils.validateInputFilePathAndContent(inputJsonPath);
             String inputFileName = inputJsonPath.getFileName().toString();
-            outputXmlPath = FileUtils.curateOutputFilePath(outputXmlPath, inputFileName);
+            outputXmlPath = ApplicationUtils.curateOutputFilePath(outputXmlPath, inputFileName);
             XMLJSONConverter converter =  ConverterFactory.getConverter();
             converter.convertJSONtoXML(inputJsonPath, outputXmlPath);
         } catch (InvalidParameterException | IOException | XMLStreamException e) {

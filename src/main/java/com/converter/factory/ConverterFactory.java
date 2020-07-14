@@ -1,7 +1,7 @@
 package com.converter.factory;
 
 import com.converter.service.XMLJSONConverter;
-import com.converter.service.impl.JsonToXmlConverter;
+import com.converter.service.XMLJSONConverterImpl;
 
 /**
  *
@@ -11,7 +11,16 @@ import com.converter.service.impl.JsonToXmlConverter;
  *
  */
 public class ConverterFactory {
+
+    /**
+     * The factory class which create converter
+     *
+     * @return
+     *
+     */
     public static XMLJSONConverter getConverter() {
-        return new JsonToXmlConverter();
+
+        // In future, we need to change here when we add more implementation provider
+        return new XMLJSONConverterImpl();
     }
 }

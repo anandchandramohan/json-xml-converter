@@ -1,4 +1,4 @@
-package com.converter.utils;
+package com.converter.constant;
 
 /**
  *
@@ -7,7 +7,7 @@ package com.converter.utils;
  * @author Anand Chandramohan.
  * 
  */
-public class ErrorMessageUtils {
+public class ErrorMessages {
 
     public static final String FILE_NOT_EXISTS = "The given input file does not exists.";
     public static final String IS_NOT_A_REGULAR_FILE = "The given input file is not a regular file.";

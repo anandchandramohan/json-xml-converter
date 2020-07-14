@@ -1,4 +1,4 @@
-package com.converter.service.impl;
+package com.converter.service;
 
 import com.converter.constant.XmlType;
 import com.converter.service.XMLJSONConverter;
@@ -22,7 +22,7 @@ import java.nio.file.Path;
  * @author  Anand Chandramohan.
  *
  */
-public class JsonToXmlConverter implements XMLJSONConverter {
+public class XMLJSONConverterImpl implements XMLJSONConverter {
 
     private static final XMLOutputFactory XML_OUTPUT_FACTORY = XMLOutputFactory.newInstance();
 
